@@ -1,4 +1,4 @@
-import { Link, NavLink, Route, Routes } from 'react-router-dom'
+import { Link, NavLink, Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import FounderDashboard from './pages/FounderDashboard'
 import PersonalRoadmap from './pages/PersonalRoadmap'
 import GtmRoadmap from './pages/GtmRoadmap'
@@ -62,15 +62,17 @@ function Layout({ children }) {
 
 export default function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<FounderDashboard />} />
-        <Route path="/personal" element={<PersonalRoadmap />} />
-        <Route path="/gtm" element={<GtmRoadmap />} />
-        <Route path="/product" element={<ProductRoadmap />} />
-        <Route path="/crm" element={<MyCRM />} />
-      </Routes>
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<FounderDashboard />} />
+          <Route path="/personal" element={<PersonalRoadmap />} />
+          <Route path="/gtm" element={<GtmRoadmap />} />
+          <Route path="/product" element={<ProductRoadmap />} />
+          <Route path="/crm" element={<MyCRM />} />
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 
